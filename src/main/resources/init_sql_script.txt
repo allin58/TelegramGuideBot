@@ -1,5 +1,3 @@
-
-SET client_encoding = 'UTF-8';
 CREATE DATABASE telegrambotdb;
 \c telegrambotdb
 CREATE TABLE city ( identity  int primary key, name varchar(50));

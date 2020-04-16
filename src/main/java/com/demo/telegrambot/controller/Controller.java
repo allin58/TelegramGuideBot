@@ -56,6 +56,9 @@ public class Controller {
     @PostMapping(value = "/", consumes = MediaType.ALL_VALUE)
     public ResponseEntity<Void> create(@RequestBody CityDTO cityDTO) {
 
+        if (cityDTO.getName() == null || cityDTO.getDescription() == null) {
+            throw new BadRequestException();
+        }
 
         if (cityDTOService.isPresent(cityDTO.getName())) {
             throw new ConflictException();
@@ -72,6 +75,9 @@ public class Controller {
     @PutMapping(value = "/", consumes = MediaType.ALL_VALUE)
     public ResponseEntity<Void> update(@RequestBody CityDTO cityDTO) {
 
+        if (cityDTO.getName() == null || cityDTO.getDescription() == null) {
+            throw new BadRequestException();
+        }
 
         if (!cityDTOService.isPresent(cityDTO.getName())) {
             throw new BadRequestException();
