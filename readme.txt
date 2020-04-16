@@ -1,31 +1,31 @@
-token: 1221774799:AAFbvfEX_PI5gSmDrczZMW7_NZXva-TuYDg
+п»їtoken: 1221774799:AAFbvfEX_PI5gSmDrczZMW7_NZXva-TuYDg
 username: GuideTBot
 botname: GuideBot
 
 
-Используется postgresql база. Версия java - 8.
-Для работы бота требуется проинициализироавть базу данных начальными значениями.
+РСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ postgresql Р±Р°Р·Р°. Р’РµСЂСЃРёСЏ java - 8.
+Р”Р»СЏ СЂР°Р±РѕС‚С‹ Р±РѕС‚Р° С‚СЂРµР±СѓРµС‚СЃСЏ РїСЂРѕРёРЅРёС†РёР°Р»РёР·РёСЂРѕР°РІС‚СЊ Р±Р°Р·Сѓ РґР°РЅРЅС‹С… РЅР°С‡Р°Р»СЊРЅС‹РјРё Р·РЅР°С‡РµРЅРёСЏРјРё.
 
 CREATE DATABASE telegrambotdb;
 \c telegrambotdb
 CREATE TABLE city ( identity  int primary key, name varchar(50));
 CREATE TABLE description ( 	identity int primary key, 	text  text,  city_id int, FOREIGN KEY (city_id ) REFERENCES city (identity) );
 -------------------------------------------------------------------------------------------------------------------------
-INSERT INTO city(identity, name)	VALUES (0, 'Мельбурн');
-INSERT INTO city(identity, name)	VALUES (1, 'Москва');
-INSERT INTO city(identity, name)	VALUES (2, 'Берлин');
-INSERT INTO city(identity, name)	VALUES (3, 'Минск');
-INSERT INTO city(identity, name)	VALUES (4, 'Амстердам');
+INSERT INTO city(identity, name)	VALUES (0, 'РњРµР»СЊР±СѓСЂРЅ');
+INSERT INTO city(identity, name)	VALUES (1, 'РњРѕСЃРєРІР°');
+INSERT INTO city(identity, name)	VALUES (2, 'Р‘РµСЂР»РёРЅ');
+INSERT INTO city(identity, name)	VALUES (3, 'РњРёРЅСЃРє');
+INSERT INTO city(identity, name)	VALUES (4, 'РђРјСЃС‚РµСЂРґР°Рј');
 
-INSERT INTO description(identity, text, city_id)	VALUES (0, 'Рекомендуется посетить Рынок королевы Виктории',0);
-INSERT INTO description(identity, text, city_id)	VALUES (1, 'Не забудьте посетить Красную Площадь',1);
-INSERT INTO description(identity, text, city_id)	VALUES (2, 'Стоит прогулятся возле Бранденбургских ворот',2);
-INSERT INTO description(identity, text, city_id)	VALUES (3, 'Стоит обратить внимание на Национальный художественный музей',3);
-INSERT INTO description(identity, text, city_id)	VALUES (4, 'Популярное место у туристов это Музей Ван Гога',4);
+INSERT INTO description(identity, text, city_id)	VALUES (0, 'Р РµРєРѕРјРµРЅРґСѓРµС‚СЃСЏ РїРѕСЃРµС‚РёС‚СЊ Р С‹РЅРѕРє РєРѕСЂРѕР»РµРІС‹ Р’РёРєС‚РѕСЂРёРё',0);
+INSERT INTO description(identity, text, city_id)	VALUES (1, 'РќРµ Р·Р°Р±СѓРґСЊС‚Рµ РїРѕСЃРµС‚РёС‚СЊ РљСЂР°СЃРЅСѓСЋ РџР»РѕС‰Р°РґСЊ',1);
+INSERT INTO description(identity, text, city_id)	VALUES (2, 'РЎС‚РѕРёС‚ РїСЂРѕРіСѓР»СЏС‚СЃСЏ РІРѕР·Р»Рµ Р‘СЂР°РЅРґРµРЅР±СѓСЂРіСЃРєРёС… РІРѕСЂРѕС‚',2);
+INSERT INTO description(identity, text, city_id)	VALUES (3, 'РЎС‚РѕРёС‚ РѕР±СЂР°С‚РёС‚СЊ РІРЅРёРјР°РЅРёРµ РЅР° РќР°С†РёРѕРЅР°Р»СЊРЅС‹Р№ С…СѓРґРѕР¶РµСЃС‚РІРµРЅРЅС‹Р№ РјСѓР·РµР№',3);
+INSERT INTO description(identity, text, city_id)	VALUES (4, 'РџРѕРїСѓР»СЏСЂРЅРѕРµ РјРµСЃС‚Рѕ Сѓ С‚СѓСЂРёСЃС‚РѕРІ СЌС‚Рѕ РњСѓР·РµР№ Р’Р°РЅ Р“РѕРіР°',4);
 
-Команды INSERT выполнял через pgadmin, если делать через shell то могут возникнуть проблемы с кодировкой кирилицы.
+РљРѕРјР°РЅРґС‹ INSERT РІС‹РїРѕР»РЅСЏР» С‡РµСЂРµР· pgadmin, РµСЃР»Рё РґРµР»Р°С‚СЊ С‡РµСЂРµР· shell С‚Рѕ РјРѕРіСѓС‚ РІРѕР·РЅРёРєРЅСѓС‚СЊ РїСЂРѕР±Р»РµРјС‹ СЃ РєРѕРґРёСЂРѕРІРєРѕР№ РєРёСЂРёР»РёС†С‹.
 
-Пароль и пользователь указанны в application.properties
+РџР°СЂРѕР»СЊ Рё РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ СѓРєР°Р·Р°РЅРЅС‹ РІ application.properties
 
-Для взамодействия с REST WebService использовался postman(пример запроса находится в скриншоте)
+Р”Р»СЏ РІР·Р°РјРѕРґРµР№СЃС‚РІРёСЏ СЃ REST WebService РёСЃРїРѕР»СЊР·РѕРІР°Р»СЃСЏ postman(РїСЂРёРјРµСЂ Р·Р°РїСЂРѕСЃР° РЅР°С…РѕРґРёС‚СЃСЏ РІ СЃРєСЂРёРЅС€РѕС‚Рµ)
 
